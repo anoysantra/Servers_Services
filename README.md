@@ -29,7 +29,7 @@ In here, the API endpoints for the backend services are mentioned along with the
    
    - Now suppose, among the list of servers in the dashboard each server will have unique server ID stored in the database. Suppose the user request(or click on that server) for a server with server ID : 7,
    - Now since the user clicked/requested on that Server no: 7 then the API from above endpoint will look like:
-     
+   
    ```bash
    Endpoint: /api/servers/7/
    Method: GET
