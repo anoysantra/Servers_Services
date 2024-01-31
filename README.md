@@ -89,7 +89,7 @@ In here, the API endpoints for the backend services are mentioned along with the
                  As we are passing restart when the restart button is clicked.
                """
     
-               action = serializer.validated_data["action"]
+               action = serializer.validated_data["action"]   #in this line the data will evaluate to action = 'restart' from the endpoint payload: { action: 'restart' }
                if action == 'start':
                   start_process(process_name_or_command)
                elif action == 'stop':
