@@ -79,7 +79,7 @@ In here, the API endpoints for the backend services are mentioned along with the
             data["server_id"] = server_id   #this value will be 5
             data["service_id"] = service_id  #this vale will be 7 from above example
 
-            # Validate the data using the serializer. Note serializers are there id django for validation and also to convert JSON data into Python understandable data.
+            # Note serializers are there in Django for validation and also to convert JSON data into Python understandable data.
     
             serializer = ServiceControlSerializer(data=data)
 
