@@ -15,8 +15,8 @@ In here, the API endpoints for the backend services are mentioned along with the
    Endpoint: /api/servers/
    Method: GET
    ```
-   This endpoint when requested will return all the lists of servers that are there in the dashboard. The first opening to your dashboard.
-   When requested this endpoint will return the server information like - Server name, server id, other server details in JSON format and this data will be there on dashboard.
+   - This endpoint when requested will return all the lists of servers that are there in the dashboard. The first opening to your dashboard.
+   - When requested this endpoint will return the server information like - Server name, server id, other server details in JSON format and this data will be there on dashboard.
 
 2. Now suppose among 10 or 15 servers in the list you click on a particular server to see the list of all services in that particular server. For these the endpoint will look like:
    ```bash
@@ -25,15 +25,15 @@ In here, the API endpoints for the backend services are mentioned along with the
    Parameters:
      server_id: ID of the desired server that user wants to see.( this is a data that needs to be passed as <server_id> is a placeholder.
    ```
-   Now suppose, among the list of servers in the dashboard each server will have unique server ID stored in the database. Suppose the user request(or click on that server) for a server with server ID : 7,
-   Now since the user clicked/requested on that Server no: 7 then the API from above endpoint will look like:
+   - Now suppose, among the list of servers in the dashboard each server will have unique server ID stored in the database. Suppose the user request(or click on that server) for a server with server ID : 7,
+   - Now since the user clicked/requested on that Server no: 7 then the API from above endpoint will look like:
    ```bash
    Endpoint: /api/servers/7/
    Method: GET
    
    ```
-   Note: Here, 7 will be added in URL when serverID:7 is requested.
-   Now all the list of services from Server no: 7 will be displayed in a webpage.Returns a JSON object containing a list of services running on the specified server, along with other relevant server details.
+   - Note: Here, 7 will be added in URL when serverID:7 is requested.
+   - Now all the list of services from Server no: 7 will be displayed in a webpage.Returns a JSON object containing a list of services running on the specified server, along with other relevant server details.
 
 
 
