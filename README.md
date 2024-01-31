@@ -39,7 +39,7 @@ In here, the API endpoints for the backend services are mentioned along with the
    - Now all the list of services from Server no: 7 will be displayed on a webpage.Returns a JSON object containing a list of services running on the specified server, along with other relevant server details.
 
   
-4. This is the endpoint where after the previous request, the list of all services of a server (for example serverID:7) will be displayed along with Start, Stop, and Restart options in the UI.
+3. This is the endpoint where after the previous request, the list of all services of a server (for example serverID:7) will be displayed along with Start, Stop, and Restart options in the UI.
    ```bash
    Endpoint: /api/servers/<server_id>/services/<service_id>/control
    Method: POST
@@ -63,14 +63,15 @@ In here, the API endpoints for the backend services are mentioned along with the
       action: "restart"
     }
     ```
-    From above example, Now each endpoint will have a function. For this above mentioned endpoint, the function will look like this:
+    From the above example, Now each endpoint will have a function. For this above-mentioned endpoint, the function will look like this:
     ```python copy
     
     def service_control_view(request, server_id, service_id):
     
     """
     note in this function from the above endpoint this function is accepting parameters like server id, and service id. Now from the above example: /api/servers/7/services/5/control
-    the server id will have value: 5 and service id: 7. If the endpoint gets requested this function will get triggered to evaluate this
+    the server id will have value: 5 and service id: 7. If the endpoint gets requested this function will get triggered to evaluate this.
+    Also, it will be good practice to check if these server id and service id are present or not in DB. Write the logic.
     """
     
          if request.method == 'POST':
@@ -103,6 +104,12 @@ In here, the API endpoints for the backend services are mentioned along with the
              return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
                  
     ```
+    - From the above function code, whatever parameters and payload are coming the code executes that operation.
+   
+   ## Conclusion :
+   The endpoints and details are mentioned above. Contact me for an explanation or further details.
+   
+   
    
     
 
