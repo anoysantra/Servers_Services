@@ -18,6 +18,7 @@ In here, the API endpoints for the backend services are mentioned along with the
    - This endpoint when requested will return all the lists of servers that are there in the dashboard. The first opening to your dashboard.
    - When requested this endpoint will return the server information like - Server name, server id, other server details in JSON format and this data will be there on dashboard.
 
+   
 2. Now suppose among 10 or 15 servers in the list you click on a particular server to see the list of all services in that particular server. For these the endpoint will look like:
    ```bash
    Endpoint: /api/servers/<server_id>
@@ -25,6 +26,7 @@ In here, the API endpoints for the backend services are mentioned along with the
    Parameters:
      server_id: ID of the desired server that user wants to see.( this is a data that needs to be passed as <server_id> is a placeholder.
    ```
+   
    - Now suppose, among the list of servers in the dashboard each server will have unique server ID stored in the database. Suppose the user request(or click on that server) for a server with server ID : 7,
    - Now since the user clicked/requested on that Server no: 7 then the API from above endpoint will look like:
    ```bash
