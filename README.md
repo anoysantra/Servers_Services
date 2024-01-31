@@ -66,25 +66,32 @@ In here, the API endpoints for the backend services are mentioned along with the
     Now each and every endpoint will have a function. For this above mentioned endpoint, the function will look like this:
     ```python copy
     def service_control_view(request, server_id, service_id):
+    """
+    note in this function from the above endpoint this function is accepting parameter like server id, service id. Now from above example : /api/servers/7/services/5/control
+    the server id will have value : 5 and service id : 7. If the endpoint gets requested and this function will get triggered to evaluate this
+    """
          if request.method == 'POST':
             data = request.data
-            data["server_id"] = server_id
-            data["service_id"] = service_id
+            data["server_id"] = server_id   #this value will be 5
+            data["service_id"] = service_id  #this vale will be 7 from above example
 
-            # Validate the data using the serializer
+            # Validate the data using the serializer. Note serializers are there id django for validation and also to convert JSON data into python understandable data.
             serializer = ServiceControlSerializer(data=data)
 
             if serializer.is_valid():
-   
+               """
+                 Note here from above we are passing this   POST: { action : 'restart' }, see the above snippet. Now that action in this case will have the data action : 'restart'.
+                 As we are passing restart when restart button is clicked.
+               """
                action = serializer.validated_data["action"]
                if action == 'start':
                   start_process(process_name_or_command)
                elif action == 'stop':
                   stop_process(process_name_or_command)
-               elif action == 'restart':
+               elif action == 'restart':                     #so in this case this will be executed.
                   restart_process(process_name_or_command)
 
-               return JsonResponse({'status': 'success', 'message': f'Service {action}ed successfully'})
+               return JsonResponse({'status': 'success', 'message': f'Service {action}ed successfully'}) #and this message will be displayed.
     
            else:
              return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
