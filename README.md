@@ -105,6 +105,7 @@ In here, the API endpoints for the backend services are mentioned along with the
                  
     ```
     - From the above function code, whatever parameters and payload are coming the code executes that operation.
+    - Remember, this buttons like start,stop and restart will automatically send this payload data from the front end. 
    
    ## Conclusion :
    The endpoints and details are mentioned above. Contact me for an explanation or further details.
