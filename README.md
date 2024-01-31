@@ -49,8 +49,20 @@ In here, the API endpoints for the backend services are mentioned along with the
       action: String specifying the desired action ("start", "stop", or "restart").
    ```
   - Here, in this endpoint we need to pass the server_id,service_id of a particular service and the control: i.e, start,stop or restard will be posted in the payload as a post request.
-  - For example, in the serverId:7 there is a service for example name: ABC whose service_id is 5. And you want to 'restart' it by pressing the restart button.
-    '''bash
+  - For example, in the serverId:7 there is a service for example name: ABC whose service_id is 5. And you want to 'restart' it by pressing the 'restart' button in the dashboard.The endpoint will look like this:
+    ```bash
+     Endpoint: /api/servers/7/services/5/control
+     Method: POST.
+    ```
+    Now keep in mind, we need to post the contro/operation whether it's start,stop or restart.
+    ```python copy
+    Endpoint: /api/servers/7/services/5/control
+    POST:
+    {
+      action : "restart"
+    }
+    ```
+   
     
 
 
