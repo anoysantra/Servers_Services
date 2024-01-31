@@ -21,7 +21,7 @@ In here, the API endpoints for the backend services are mentioned along with the
    
 2. Now suppose among 10 or 15 servers in the list you click on a particular server to see the list of all services in that particular server. For these the endpoint will look like:
    ```bash
-   Endpoint: /api/servers/<server_id>
+   Endpoint: /api/servers/<server_id>/services
    Method: GET
    Parameters:
      server_id: ID of the desired server that user wants to see.( this is a data that needs to be passed as <server_id> is a placeholder.
@@ -31,7 +31,7 @@ In here, the API endpoints for the backend services are mentioned along with the
    - Now since the user clicked/requested on that Server no: 7 then the API from above endpoint will look like:
    
    ```bash
-   Endpoint: /api/servers/7/
+   Endpoint: /api/servers/7/services
    Method: GET
    ```
    
